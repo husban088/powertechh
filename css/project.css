@@ -1,0 +1,494 @@
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+body {
+    box-sizing: border-box;
+    font-size: 16px;
+    background-color: var(--bg-color);
+    font-family: 'Poppins', sans-serif;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+@media only screen and (max-width: 75em) {
+    html {
+        font-size: 56.25%;
+    }
+}
+
+@media only screen and (max-width: 56.25em) {
+    html {
+        font-size: 50%;
+    }
+}
+
+@media only screen and (min-width: 112.5em) {
+    html {
+        font-size: 75%;
+    }
+}
+
+:root {
+    --bg-color: #1F1F1F;
+    --text-color: #fff;
+    --main-color: #0ef;
+    --black-color: #000;
+}
+
+
+/* ==================================== GRID SYSTEM ============================================== */
+.row {
+    max-width: 114rem;
+    margin: 0 auto;
+}
+
+.row:not(:last-child) {
+    margin-bottom: 8rem;
+}
+
+@media only screen and (max-width: 56.25em) {
+    .row:not(:last-child) {
+        margin-bottom: 6rem;
+    }
+}
+
+@media only screen and (max-width: 56.25em) {
+    .row {
+        max-width: 50rem;
+        padding: 0 3rem;
+    }
+}
+
+.row::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.row [class^="col-"] {
+    float: left;
+}
+
+.row [class^="col-"]:not(:last-child) {
+    margin-right: 6rem;
+}
+
+@media only screen and (max-width: 56.25em) {
+    .row [class^="col-"]:not(:last-child) {
+        margin-right: 0;
+        margin-bottom: 6rem;
+    }
+}
+
+@media only screen and (max-width: 56.25em) {
+    .row [class^="col-"] {
+        width: 100% !important;
+    }
+}
+
+.row .col-1-of-2 {
+    width: calc((100% - 6rem) / 2);
+}
+
+.row .col-1-of-3 {
+    width: calc((100% - 2 * 6rem) / 3);
+}
+
+.row .col-1-of-4 {
+    width: calc((100% - 3 * 6rem) / 4);
+}
+
+
+/* ====================== NAVBAR SECTION DESIGN ========================== */
+
+.navigation {
+    background-color: #141414;
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    padding: 1.6rem;
+    width: 95%;
+    border-radius: 20px;
+    margin-top: 2rem;
+    margin-left: 3rem;
+    border: 1px solid var(--main-color);
+}
+
+.navbar-logo {
+    margin-left: 2rem;
+}
+
+.nav-logo-link {
+    color: var(--text-color);
+    text-decoration: none;
+}
+
+.code {
+    color: var(--main-color);
+}
+
+.navigation-list {
+    list-style: none;
+    display: inline-block;
+    margin-left: 5rem;
+    margin-top: 1rem;
+    text-transform: capitalize;
+}
+
+.navigation-link {
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 2rem;
+}
+
+.navigation a.active {
+    color: var(--main-color);
+    text-decoration: underline;
+}
+
+.navigation-link:hover {
+    text-decoration: underline;
+    color: var(--main-color);
+}
+
+/* ======================= PROJECTS SECTION ========================= */
+.projects-section{
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    padding: 10rem 0;
+}
+
+.project-heading-main{
+    text-align: center;
+    font-size: 4.7rem;
+    text-transform: capitalize;
+    margin-bottom: 8rem;
+    color: var(--main-color);
+}
+
+.project-content{
+    margin-left: -6rem;
+}
+
+.project-img{
+    width: 70%;
+    margin-left: -7rem;
+}
+
+.projects-images{
+    position: relative;
+}
+
+.img-1:hover{
+    transform: scale(1.2);
+    box-shadow: 2rem 2rem 4rem var(--main-color);
+}
+
+.img-2:hover{
+    transform: scale(1.2);
+    z-index: 2000;
+    box-shadow: 2rem 2rem 4rem var(--main-color);
+}
+
+.img-3:hover{
+    transform: scale(1.2);
+    z-index: 2500;
+    box-shadow: 2rem 2rem 4rem var(--main-color);
+}
+
+.img-1{
+    position: absolute;
+    left: 20rem;
+    top: 10rem;
+    z-index: 1000;
+    transition: all .5s;
+}
+
+.img-2{
+    position: absolute;
+    left: 30rem;
+    top: 3rem;
+    z-index: 500;
+    transition: all .5s;
+}
+
+.img-3{
+    position: absolute;
+   top: 0;
+    left: 5rem;
+    transition: all .5s;
+}
+
+.projects-section .btn{
+    display: inline-block;
+    color: var(--text-color);
+    font-size: 2.5rem;
+    letter-spacing: 1.5px;
+    margin-left: -5rem;
+    border: 2px solid var(--text-color);
+    padding: 0.6rem 2.3rem;
+    text-decoration: none;
+    text-transform: capitalize;
+    border-radius: 10rem;
+    background-image: linear-gradient(120deg, transparent 0%, transparent 50%,  #09AD8B 50%);
+    background-size: 220%;
+    transition: all .4s;
+}
+
+.projects-section .btn:hover{
+    background-position: 100%;
+    color: var(--black-color);
+    transform: translateX(1rem);
+    font-weight: 600;
+}
+
+.project-heading-sub{
+    color: var(--main-color);
+    font-size: 3.5rem;
+    text-transform: capitalize;
+    margin-left: 2rem;
+}
+
+.project-paragraph{
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+    width: 80%;
+    margin-left: 2rem;
+}
+
+@media only screen and (max-width: 562px){
+    .projects-images{
+        margin-left: -7rem;
+    }
+}
+
+@media only screen and (max-width: 558px){
+    .project-img{
+       width: 60%;
+       margin-left: -1.6rem;
+    }
+}
+
+@media only screen and (max-width: 498px){
+    .project-img{
+       width: 50%;
+       margin-left: 0.1rem;
+    }
+}
+
+@media only screen and (max-width: 437px){
+    .projects-images{
+        margin-left: 0.1rem;
+    }
+    .img-1{
+       left: 10rem;
+    }
+    .img-2{
+        left: 20rem;
+    }
+}
+
+@media only screen and (max-width: 363px){
+    .projects-images{
+       margin-left: -1.4rem;
+    }
+}
+
+@media only screen and (max-width: 361px){
+    .img-1{
+       margin-top: -2rem;
+    }
+}
+
+@media only screen and (max-width: 1271px){
+    .project-content{
+       margin-left: 2rem;
+    }
+    .project-btn .btn{
+        margin-left: 2rem;
+    }
+}
+
+@media only screen and (max-width: 900px){
+    .project-paragraph{
+       width: 100%;
+    }
+}
+
+@media only screen and (max-width: 56.25em){
+    .projects-section{
+       padding-bottom: 30rem;
+    }
+}
+
+/* ===================== FOOTER SECTION ======================== */
+.footer {
+    background-color: #151414;
+    padding-top: 5rem;
+    padding-bottom: 0.4px;
+    color: var(--text-color);
+}
+
+.footer-contact-icon {
+    color: var(--main-color);
+    font-size: 3rem;
+    margin-right: 1rem;
+    margin-bottom: 1rem;
+}
+
+.location-content span {
+    font-weight: 550;
+    font-size: 2rem;
+    text-transform: capitalize;
+}
+
+.phone-content span{
+    font-weight: 550;
+    font-size: 2rem;
+    text-transform: capitalize;
+}
+
+.email-content{
+    font-weight: 550;
+    font-size: 2rem;
+    text-transform: capitalize;
+}
+
+.location-text{
+   color: #535253;
+   font-size: 2rem;
+   font-weight: 550;
+}
+
+.phone-text{
+    color: #535253;
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 2rem;
+}
+
+.email-text{
+    color: #535253;
+    font-size: 1.6rem;
+    font-weight: 600;
+    text-transform: capitalize;
+}
+
+.footer-row-1{
+    border-bottom: 1px solid #535253;
+}
+
+.footer-pseb{
+    width: 70%;
+}
+
+.footer-img{
+    font-size: 2rem;
+    font-weight: 550;
+    margin-bottom: 0.4rem;
+}
+
+.footer-details-paragraph{
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.footer-register{
+    font-size: 2rem;
+    font-weight: 550;
+    margin-bottom: 0.7rem;
+}
+
+.footer-ul{
+    column-count: 2;
+}
+
+.footer-quick-links{
+    font-size: 2rem;
+    font-weight: 550;
+    margin-bottom: 0.6rem;
+}
+
+.footer-list{
+    list-style: none;
+    padding: 0.6rem;
+}
+
+.footer-nav-link{
+    color: #535253;
+    text-decoration: none;
+}
+
+.footer-nav-link:hover{
+    color: var(--main-color);
+}
+
+.social-heading{
+    font-size: 2rem;
+    font-weight: 550;
+    margin-bottom: 1.3rem;
+}
+
+.footer-social-links{
+    margin-right: 3rem;
+    font-size: 3rem;
+}
+
+.fa-facebook{
+    color: blue;
+    margin-bottom: 1rem;
+}
+
+.fa-twitter{
+    color: #379BE9;
+}
+
+.fa-gihub{
+    color: black;
+}
+
+.fa-linkedin{
+    color: blue;
+}
+
+.fa-instagram{
+    color: #8C0AF9;
+}
+
+.fa-youtube{
+    color: red;
+}
+
+.google-img{
+    width: 60%;
+}
+
+.google-rates{
+    font-size: 2rem;
+    font-weight: 550;
+    text-transform: capitalize;
+    margin-bottom: 1rem;
+}
+
+.last-footer-text{
+    background-color: #202020;
+    padding: 0.4rem;
+}
+
+.footer-last-paragraph{
+    text-align: center;
+    font-size: 1.7rem;
+}
+
+@media only screen and (max-width: 56.25em){
+    .footer{
+        text-align: center;
+    }
+}
